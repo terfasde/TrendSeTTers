@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Danfo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+
+body {
+    font-family: "Varela Round", sans-serif;
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    background-attachment: fixed;
+    color: #F0EDCF;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container img {
+    width: 100%; /* Adaptable */
+    max-width: 500px; /* Limita el tamaño en pantallas grandes */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    background-color: #0B60B0;
+    padding: 20px;
+    width: 100%; /* Cambia para adaptarse a pantallas pequeñas */
+    max-width: 400px; /* Límite para pantallas más grandes */
+    margin: 20px auto;
+    border-radius: 8px;
+    color: #F0EDCF;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F0EDCF;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #40A2D8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    color: #F0EDCF;
+}
+
+input[type="submit"] {
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%; /* Adaptable */
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    background-color: #0B60B0;
+}
+
+h2,
+h3 {
+    text-align: center;
+    color: #F0EDCF;
+}
+
+#post-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+}
+
+#post-menu {
+    text-align: center;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: -70px; /* Deja un margen debajo del navbar */
+    box-sizing: border-box;
+    animation-duration: 2s;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #40A2D8;
+    background: linear-gradient(to bottom, #272727, #000000);
+    width: 80%; /* Adaptable */
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.post img {
+    max-width: 200px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.post-content {
+    flex: 1;
+    text-align: center;
+}
+
+.post p {
+    margin: 0;
+    color: #F0EDCF;
+    font-weight: bold;
+    align-items: center;
+}
+
+.post-info p{
+    margin-bottom: 10px;
+}
+
+.post-info button {
+    background-color: #40A2D8;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    color: #F0EDCF;
+}
+
+.post-info p.nombre-usuario {
+    font-size: 24px; /* Tamaño del nombre más grande */
+    font-weight: bold;
+    margin: 0;
+    color: white; /* Asegura que el nombre se vea bien */
+}
+
+.post-info p.fecha {
+    font-size: 14px; /* Tamaño estándar para la fecha */
+    color: #F0EDCF;
+    margin: 10px 0;
+}
+
+.post-info p {
+    margin: 5px 0;
+}
+
+.post-info span {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #F0EDCF;
+}
+
+.separator {
+    border-top: 2px solid #F0EDCF;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.post strong {
+    color: #F0EDCF;
+}
+
+.post em {
+    color: #40A2D8;
+    font-size: 0.9em;
+}
+
+.container {
+    display: flex;
+}
+
+.left-column {
+    width: 80%;
+    padding: 20px;
+}
+
+.right-column {
+    width: 30%;
+    padding: 20px;
+    border-left: 2px solid #40A2D8;
+}
+
+.navbar {
+    background: linear-gradient(to bottom, #272727, #000000);
+    color: #F0EDCF;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #40A2D8;
+    box-sizing: border-box;
+    animation-duration: 2s;
+}
+
+.navbar h2 {
+    flex-grow: 1;
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.navbar a {
+    color: #F0EDCF;
+    text-align: right;
+    text-decoration: none;
+    transition: 0.5s;
+    margin-left: 15px;
+}
+
+.navbar a:hover {
+    color: #72cbff;
+    transition: 0.5s;
+}
+
+.search-form {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background-color: #3D3B40;
+    color: #F0EDCF;
+    font-family: "Varela Round", sans-serif;
+}
+
+.search-form input[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.search-form input[type="submit"]:hover {
+    background-color: #0c4f8e;
+    transition: .5s;
+}
+
+form {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #40A2D8;
+    resize: vertical;
+    background-color: #3D3B40;
+    color: #F0EDCF;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    transition: .5s;
+}
+
+input[type="submit"]:hover {
+    transition: .5s;
+    background-color: #072b4d;
+}
+
+#mensaje-container {
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+.mensaje {
+    padding: 20px;
+    border-radius: 8px;
+    color: #F0EDCF;
+    background: linear-gradient(to bottom, #272727, #000000);
+    max-width: 600px;
+    border: 2px solid #40A2D8;
+    margin: 0 auto;display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.navbar ul li a {
+    color: #F0EDCF;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #40A2D8;
+}
+
+.error {
+    color: #dc3545;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(to bottom, #000000, #272727);
+    height: 100%;
+    padding-top: 10px;
+    position: fixed;
+    top: 80px; /* Deja espacio debajo del navbar */
+    left: 0;
+    z-index: 900; /* Aseguramos que el sidebar quede debajo del navbar */
+    border-right: 2px solid #40A2D8;
+    transition: width 0.3s ease;
+    animation-duration: 2s;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.menu-hamburguesa {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #F0EDCF;
+}
+
+.sidebar ul li a {
+    color: #F0EDCF;
+    transition: 0.6s;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    transition: 0.6s;
+    align-items: center;
+}
+
+.sidebar ul li a .nav-text {
+    display: none;
+    opacity: 0;
+    transition: 0.6s;
+    align-items: center;
+    transition: opacity 0.6s ease;
+}
+
+.sidebar ul li a .nav-text {
+    display: inline;
+    align-items: center;
+    opacity: 1;
+    transition: 0.6s;
+}
+
+.sidebar ul li a:hover {
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    padding: 10px;
+    border: 2px solid #40A2D8;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.content {
+    margin-left: 60px;
+    padding: 20px;
+    transition: 0.6s;
+    width: calc(100% - 60px);
+    transition: margin-left 0.6s ease;
+}
+
+.sidebar:hover~.content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.areaDropeada {
+    border: 2px solid #40A2D8;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#post-form {
+    background: none;
+    max-width: 300px;
+}
+
+#show-post-form {
+    border: 2px solid #40A2D8;
+    padding: 5px;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+    transition: 1.8s;
+    animation-duration: 3s;
+}
+
+#publicar {
+    border: 2px solid #40A2D8;
+    padding: 5px;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+    margin-right: 50px;
+    transition: 1.8s;
+    text-align: center;
+    align-items: center;
+}
+
+#content {
+    padding: 20px;
+    
+}
+
+#show-post-form:hover {
+    background: linear-gradient(to bottom, #ffffff , #9c9c9c);
+    color: #000000;
+    transition: 1.8s;
+    border: 2px solid #1f688f;
+}
+
+#nova {
+    margin-left: 50px;
+}
+
+button {
+    border: 2px solid #40A2D8;
+    padding: 5px;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+}
+
+.messaging-container {
+    border: 2px solid #40A2D8;
+    padding: 5px;
+    color: white;
+    align-items: center;
+    max-width: 500px;
+    max-height: 500px;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+    transition: 1.8s;
+    margin-right: 200px;
+    margin-top: 23px;
+}
+
+#mensajesContainer{
+    border: 2px solid #40A2D8;
+}
+
+#buscarUsuario {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #40A2D8;
+}
+
+button#buscarBtn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button#enviarMensajeBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    /* Mostrar el botón de hamburguesa */
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    /* Ocultar la barra lateral en móviles por defecto */
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+    /* Cuando la clase active está presente, mostrar la sidebar */
+    .sidebar.active {
+        width: 250px;
+    }
+
+    .navbar h2 {
+        text-align: left;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .post {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid #40A2D8;
+    }
+
+    .right-column,
+    .left-column {
+        width: 100%;
+    }
+
+    .chat-box {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .container img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input[type="submit"],
+    input[type="text"],
+    textarea {
+        width: 100%;
+    }
+
+    .chat-box {
+        width: 100%;
+    }
+
+    .navbar h2 {
+        font-size: 1.8em;
+    }
+}
+
+.upvote-btn {
+        border: 2px solid #40A2D8;
+        padding: 5px;
+        color: white;
+        font-family: "Varela Round", sans-serif;
+        border-radius: 5px;
+        background: linear-gradient(to bottom, #272727, #000000);
+}
+
+.upvote-btn .fa-arrow-up {
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.upvote-btn:hover .fa-arrow-up {
+    transform: translateY(-2px);
+}
+
+.comment-btn {
+    border: 2px solid #40A2D8;
+        padding: 5px;
+        color: white;
+        font-family: "Varela Round", sans-serif;
+        border-radius: 5px;
+        background: linear-gradient(to bottom, #272727, #000000);
+}
+
+.comment-btn .fa-comment {
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.comment-btn:hover .fa-comment {
+    transform: translateY(-2px);
+}
+
+/* Línea divisoria entre posts */
+.post {
+    position: relative;
+}
+
+.post::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #40A2D8;
+}
+
+/* Botón para abrir el formulario de posteo */
+#show-post-form {
+    border: 2px solid #40A2D8;
+    padding: 5px 10px; /* Aumentamos el tamaño del padding */
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+    cursor: pointer;
+    position: relative; /* Asegura que no se superponga con otros elementos */
+    z-index: 950; /* Asegura que esté por encima del sidebar */
+    margin: 80px auto; /* Centramos el botón */
+    display: inline-block; /* Evita que ocupe todo el ancho */
+    text-align: center; /* Centra el texto dentro del botón */
+    font-size: 16px; /* Tamaño de letra más grande para mejor visibilidad */
+}
+
+#post-form-modal {
+    display: none; /* Para ocultar el modal inicialmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#show-post-form:hover {
+    background: #0B60B0;
+    color: #F0EDCF;
+    border: 2px solid #0B60B0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(to bottom, #272727, #000000);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    color: #F0EDCF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #40A2D8;
+}
+
+.modal-active {
+    overflow: hidden; /* Evita que la página se desplace cuando el modal está abierto */
+}
+
+#comment-form {
+    background: none;
+    max-width: 300px;
+     
+}
+
+.comment-list {
+    max-height: 250px; /* Altura máxima del contenedor de comentarios */
+    overflow-y: scroll; /* Habilitar scroll vertical */
+    margin-top: 20px; /* Separación entre el form y los comentarios */
+    border-top: 1px solid #ccc; /* Separador visual */
+    padding-top: 10px; /* Espacio interno */
+}
+
+.comentario {
+    margin-bottom: 15px; /* Separar cada comentario */
+    padding: 10px;
+    background: linear-gradient(to bottom, #272727, #000000);
+    border-radius: 5px;
+}
+
+.upvote-btn.liked {
+    background-color: #2457ff; /* Cambia el color al estar likeado */
+    color: white;
+    font-weight: bold;
+}
+
+/* Efecto de blur cuando el modal está activo */
+.modal-active #posts-container,
+.modal-active header,
+.modal-active footer {
+    filter: blur(5px);
+}
+
+/* Estilo del botón para cerrar el modal */
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilo del contenedor de arrastre para archivos */
+.drop-area {
+    padding: 20px;
+    border: 2px dashed #F0EDCF;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.drop-area.highlight {
+    background-color: rgba(240, 237, 207, 0.2);
+}

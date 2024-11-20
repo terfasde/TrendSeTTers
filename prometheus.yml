@@ -1,0 +1,29 @@
+global:
+  scrape_interval: 15s 
+  evaluation_interval: 15s  
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'apache'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['apache:80']
+
+  - job_name: 'php'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['php:9000']
+
+  - job_name: 'mysql'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['db-master:9104']  # Cambia si usas otro exportador de MySQL
+
+  - job_name: 'node_exporter'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['localhost:9100']  # Node Exporter para métricas del sistema

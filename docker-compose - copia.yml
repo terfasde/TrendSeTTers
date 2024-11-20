@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.1-apache
+    container_name: web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html/MVC_App:/var/www/html
+      - ./db-master-data:/docker-entrypoint-intitdb.d
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    networks:
+      - app-network
+
+
+  db-master:
+    image: mysql:8.0
+    container_name: db-master
+    environment:
+      MYSQL_USER: francisco
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: social_network
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-master-data:/var/lib/mysql
+    networks:
+      - app-network
+
+
+  db-slave:
+    image: mysql:8.0
+    container_name: db-slave
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_REPLICATION_ROLE: slave
+      MYSQL_REPLICATION_MASTER: db-master
+    ports:
+      - "3308:3306"
+    depends_on:
+      - db-master
+    volumes:
+      - db-slave-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  monitoring:
+    image: prom/prometheus
+    container_name: monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - web
+    networks:
+      - app-network
+volumes:
+  db-master-data:
+  db-slave-data:
+networks:
+      app-network:
+        driver: bridge

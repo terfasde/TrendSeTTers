@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Danfo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
+
+body {
+    font-family: "Varela Round", sans-serif;
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    background-attachment: fixed;
+    color: #F0EDCF;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    background: linear-gradient(to bottom, #272727, #000000);
+    color: #F0EDCF;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 2px solid #40A2D8;
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.navbar ul li a {
+    color: #F0EDCF;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #40A2D8;
+}
+
+.navbar h2 {
+    flex-grow: 1;
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.navbar a {
+    color: #F0EDCF;
+    text-align: right;
+    text-decoration: none;
+    transition: 0.5s;
+    margin-left: 15px;
+}
+
+.navbar a:hover {
+    color: #72cbff;
+    transition: 0.5s;
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(to bottom, #000000, #272727);
+    height: 100%;
+    padding-top: 20px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    border-right: 2px solid #40A2D8;
+    transition: width 0.3s ease;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.menu-hamburguesa {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #F0EDCF;
+}
+
+.sidebar ul li a {
+    color: #F0EDCF;
+    transition: 0.6s;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    transition: 0.6s;
+    align-items: center;
+}
+
+.sidebar ul li a .nav-text {
+    display: none;
+    opacity: 0;
+    transition: 0.6s;
+    align-items: center;
+    transition: opacity 0.6s ease;
+}
+
+.sidebar ul li a .nav-text {
+    display: inline;
+    align-items: center;
+    opacity: 1;
+    transition: 0.6s;
+}
+
+.sidebar ul li a:hover {
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    padding: 10px;
+    border: 2px solid #40A2D8;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.content {
+    margin-left: 60px;
+    padding: 20px;
+    transition: 0.6s;
+    width: calc(100% - 60px);
+    transition: margin-left 0.6s ease;
+}
+
+.sidebar:hover~.content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+.evento-container {
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin-right: 190px;
+}
+
+/* Styling the form */
+#evento-form-container {
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+#evento-form {
+    padding: 20px;
+    border-radius: 8px;
+    color: #F0EDCF;
+    background: linear-gradient(to bottom, #272727, #000000);
+    max-width: 600px;
+    border: 2px solid #40A2D8;
+    margin: 0 auto;display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#evento-form input[type="text"],
+#evento-form input[type="datetime-local"],
+#evento-form input[type="file"],
+#evento-form textarea {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #40A2D8;
+    border-radius: 4px;
+    background-color: #272727;
+    color: #F0EDCF;
+    display: block;
+    margin: 4px; 
+}
+
+#evento-form button {
+    background-color: #40A2D8;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    color: #F0EDCF;
+    cursor: pointer;
+    border: 2px solid #40A2D8;
+}
+
+#evento-form button:hover {
+    background-color: #0B60B0;
+}
+
+/* Events list styling */
+#event-list {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.evento {
+    background: linear-gradient(to bottom, #272727, #000000);
+    padding: 10px;
+    margin-bottom: 20px;
+    max-width: 300px;
+    border-radius: 8px;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    color: #F0EDCF;
+    border: 2px solid #40A2D8;
+}
+
+.evento h4 {
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.evento p {
+    margin-bottom: 5px;
+    color: #F0EDCF;
+}
+
+.evento img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.evento button {
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #40A2D8;
+}
+
+.evento button:hover {
+    background-color: #0B60B0;
+    transition: 0.8s;
+}
+
+.container img {
+    width: 100%; /* Adaptable */
+    max-width: 500px; /* Limita el tamaño en pantallas grandes */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F0EDCF;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #40A2D8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-image: url(/MVC_App/Visual/fondo.gif);
+    color: #F0EDCF;
+}
+
+input[type="submit"] {
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%; /* Adaptable */
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    background-color: #0B60B0;
+}
+
+h2,
+h3 {
+    text-align: center;
+    color: #F0EDCF;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #40A2D8;
+    resize: vertical;
+    display: block;
+    background-color: #3D3B40;
+    color: #F0EDCF;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    background-color: #40A2D8;
+    color: #F0EDCF;
+    cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    transition: .5s;
+}
+
+#nova {
+    margin-left: 50px;
+}
+
+button {
+    border: 2px solid #40A2D8;
+    padding: 5px;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #272727, #000000);
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    backdrop-filter: none; /* Asegura que el modal mismo no se vea afectado */
+}
+
+/* Contenido del modal (centrado) */
+.modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1100; /* Asegura que el formulario esté por encima del blur */
+    position: relative;
+}
+
+/* Botón para cerrar el modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Desenfoque del fondo cuando el modal está activo (solo al contenido principal) */
+.blur-background {
+    filter: blur(5px);
+}
+
+/* Agregar una capa oscura solo sobre el sidebar y el navbar */
+.overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Capa con opacidad mínima */
+    z-index: 999; /* Debe estar debajo del modal pero encima del contenido */
+    pointer-events: none; /* No bloquea interacciones con el sidebar o navbar */
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Mostrar el botón de hamburguesa */
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    /* Ocultar la barra lateral en móviles por defecto */
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+    /* Cuando la clase active está presente, mostrar la sidebar */
+    .sidebar.active {
+        width: 250px;
+    }
+
+    .navbar h2 {
+        text-align: left;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .post {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid #40A2D8;
+    }
+
+    .right-column,
+    .left-column {
+        width: 100%;
+    }
+
+    .chat-box {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .container img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input[type="submit"],
+    input[type="text"],
+    textarea {
+        width: 100%;
+    }
+
+    .chat-box {
+        width: 100%;
+    }
+
+    .navbar h2 {
+        font-size: 1.8em;
+    }
+}
